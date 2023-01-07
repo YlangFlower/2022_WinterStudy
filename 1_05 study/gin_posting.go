@@ -49,7 +49,7 @@ func main() {
 		}
 		// Get the ID of the new post
 		id, err := result.LastInsertId()
-		//	fmt.Println(id)
+
 		if err != nil {
 			c.JSON(500, gin.H{"error": err.Error()})
 			return
@@ -105,6 +105,7 @@ func main() {
 		post.Like++
 		_, err = db.Exec("UPDATE liketable SET `Like` = ? WHERE ID =?", post.Like, post.ID)
 
+		// Printing error message.
 		if err != nil {
 			log.Println("Error:", err)
 		}
