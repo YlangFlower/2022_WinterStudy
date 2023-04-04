@@ -1,0 +1,8 @@
+database:
+  type: mysql
+  username: root
+  password: polarbear21*
+  protocol: tcp
+  host: 0.0.0.0
+  port: 3306
+  db : integrate2

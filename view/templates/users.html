@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User data Page</title>
+</head>
+<body>
+<table border="3">
+    <tr>
+        <th>Name</th>
+        <th>Password</th>
+        <th>Nickname</th>
+        <th>Email</th>
+        <th>Temperature</th>
+        <th>DongIDs</th>
+    </tr>
+    {{range .users}}
+    <tr>
+        <td>{{.Name}}</td>
+        <td>{{.Password}}</td>
+        <td>{{.Nickname}}</td>
+        <td>{{.Email}}</td>
+        <td>{{.Temperature}}</td>
+        <td>{{.DongIDs}}</td>
+    </tr>
+    {{end}}
+</table>
+</body>
+</html>

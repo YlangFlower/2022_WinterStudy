@@ -1,0 +1,10 @@
+3/21 작업 기록
+
+수경 -> 
+ShowData, GetChRooms 함수 수정함(업데이트)
+AddChat 함수 새롭게 추가함
+
+문제점
+1) "Product Details" 에서 Chat 버튼 눌러서 create-data 으로 이동할 때 에러 발생함.
+Chat 버튼 눌러서 이동하는거 다른 곳으로 바꿔줘야 할듯 (에러코드 400).
+--> uid랑 pid가 0이라서 에러 생김... 

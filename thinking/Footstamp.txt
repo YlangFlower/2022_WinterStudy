@@ -1,0 +1,37 @@
+일단 테이블들 간의 관계성 설정하고, 외래키 다 잘 세팅해줬고, gorm.Model까지 필드값으로 넣어주었음.
+또, MVC 패턴에 맞게 폴더와 파일 잘 리팩토링 했음.
+
+이제 할 일 :
+controller.go 에서 데이터 INSERT, UPDATE, DELETE 같은거 해보기. >>> (완료)
+더 나아가, Postman 같은 프로그램에서 데이터 넣어줬을때, DB에 잘 박히는지 다시 조립해보기(복습).
+
+14일 할일 :
+로그인/로그아웃 기능 만들고,
+로그인 할때 하나의 변수값을 로그인된 회원객체의 PK로 받아서
+그 값으로 Update나 Delete할때 사용하기.
+로그아웃 시 그 변수를 0으로 다시 초기화하기.
+
+
+# MVC 패턴에 대한 분석
+Model
+    -model.go: Data structure definition
+    -db.go: Database connection, table relationship settings, database query functions (such as CRUD operations)
+
+View
+    -view.go: HTML, CSS, JS, and any other front-end related logic
+
+Controller
+    -controller.go: Data retrieval(검색) and modification(수정) (using functions from the model), handling of incoming HTTP requests and routing(라우팅) to the appropriate function
+
+Config
+    -settings.go: program and database settings
+    -settings.yaml: YAML file for settings.go
+
+cf) 비즈니스 로직은 그럼 어디에 포함되는 걸까?
+    -> 비즈니스 로직은 애플리케이션이 사용자 입력 및 기타 이벤트에 대한 응답으로 작동하는 방식을 결정하는 규칙 및 프로세스를 나타냄.
+    -> 이 로직은 애플리케이션의 핵심 기능을 정의하고 데이터가 처리되고 저장되는 방법을 제어함.
+
+    MVC 패턴에서 비즈니스 로직은 일반적으로 Controller, Model layer에서 구현된다.
+    Controller는 사용자로부터 입력을 받고, 모델을 업데이트 한다.
+    Model은 데이터 처리(검색,저장,조작,유효성 검사,데이터 관계 유지 등)를 담당한다.
+    View는 인터페이서 랜더링과 모델의 데이터 가시화를 담당한다.

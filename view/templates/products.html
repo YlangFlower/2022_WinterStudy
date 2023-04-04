@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products Page</title>
+</head>
+<body>
+<h1>Select your product!</h1><br>
+<p>
+    This is some text on my webpage.<br><br>
+    Please click Detail button to chat with product seller.
+</p>
+<table border="3">
+    <thead>
+        <tr>
+            <th>Pname</th>
+            <th>Price</th>
+            <th>Conditions</th>
+            <th>UID</th>
+            <th>PCID</th>
+            <th>PSID</th>
+        </tr>
+    </thead>
+    <tbody id="products">
+    {{range .prods}}
+    <tr>
+        <td>{{.Pname}}</td>
+        <td>{{.Price}}</td>
+        <td>{{.Ptext}}</td>
+        <td>{{.UID}}</td>
+        <td>{{.PCID}}</td>
+        <td>{{.PSID}}</td>
+        <td><button onclick="window.location.href='/products/{{.ID}}'">Detail</button></td>
+    </tr>
+    {{end}}
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<body>
+<h1>Chatting Room</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <td>{{.ID}}</td>
+    </tr>
+    <tr>
+        <th>Buyer</th>
+        <td>{{.BID}}</td>
+    </tr>
+    <tr>
+        <th>Seller</th>
+        <td>{{.SID}}</td>
+    </tr>
+    <tr>
+        <th>Product</th>
+        <td>{{.PID}}</td>
+    </tr>
+</table>
+<table border="1" cellpadding="10">
+    <thead>
+    <tr>
+        <th>Text</th>
+        <th>User ID</th>
+        <th>Time</th>
+    </tr>
+    </thead>
+    <tbody id="chats">
+    {{range .chats}}
+    <tr>
+        <td align="middle" valign="middle">{{.Text}}</td>
+        <td align="middle" valign="middle">{{.UID}}</td>
+        <td align="middle" valign="middle">{{.CreatedAt}}</td>
+    </tr>
+    {{end}}
+    </tbody>
+</table>
+<form action="/chat" method="POST">
+    <input type="text" name="ctext" size="30">
+    <input type="hidden" name="rid" value="{{.ID}}">
+    <button type="submit">Chat</button>
+</form>
+</body>
+</html>

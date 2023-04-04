@@ -1,0 +1,5 @@
+"Login" -> 성공 -> "Login Successs"
+	  -> 실패 -> "Unregistered User", "register" 사이트로 이동하라는 링크 표시. 
+							-> "register" -> 성공 -> "회원가입 환영" 등의 새로운 웹 띄워야함. 지금은 error.
+										-> 실패 -> "이미 존재하는 회원이므로, 가능하면 팝업메세지 하나 띄워주고 "Login" 페이지로 리디렉션 시켜줘야함... 지금은 404 error.	 
+	-> "Register"로 이동하는 링크 존재함.

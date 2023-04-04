@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chatting-rooms Page</title>
+</head>
+<body>
+	<h1>Chatting Rooms</h1>
+    <p>If you want to continue the chat, please press the "Chat" button.</p>
+	<table border="1" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>BID Id</th>
+                    <th>SID Id</th>
+                    <th>PID Id</th>
+                    <th></th> 
+                </tr>
+            </thead>
+        <tbody id="chrooms">
+            {{range .chrooms}}
+                <tr>
+                    <td align="middle" valign="middle">{{.BID}}</td>
+                    <td align="middle" valign="middle">{{.SID}}</td>
+                    <td align="middle" valign="middle">{{.PID}}</td>
+                    <td align="middle" valign="middle">
+                        <button onclick="window.location.href='/data/{{.ID}}'">Chat</button></td>
+                </tr>
+            {{end}}
+        </tbody>
+     </table>
+</body>
+</html>

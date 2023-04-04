@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>board</title>
+</head>
+<body>
+<h1>게시판</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>글번호</th>
+        <th>작성일자</th>
+        <th>작성자ID</th>
+        <th>제목</th>
+    </tr>
+    </thead>
+    <tbody id="posts">
+    {{range $pos:=.posts}}
+    <tr>
+        <td>{{$pos.ID}}</td>
+        <td>{{$pos.CreatedAt}}</td>
+        <td>{{$pos.UserID}}</td>
+
+        <td><a href="posts/{{.ID}}">{{$pos.Title}}</a></td>
+    </tr>
+    {{end}}
+
+    </tbody>
+</table>
+
+<form method="POST" action="/board">
+    <button type="submit" name="action" value="post">글쓰기</button><br>
+</form>
+</body>
+</html>
